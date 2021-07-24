@@ -1,0 +1,7 @@
+.container{
+    width: auto;
+    min-height: auto;
+    display: grid;
+    place-items: center;
+    background-color: hsl(206, 92%, 94%);
+}

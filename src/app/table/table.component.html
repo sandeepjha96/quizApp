@@ -1,0 +1,21 @@
+<div class="table1">
+    <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Question Number</th>
+            <th scope="col">Question</th>
+            <th scope="col">User Answer</th>
+            <th scope="col">Correct Answer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let value of tableValue" [ngClass]="value.isCorrect ? 'class1' : 'class2'">
+            <td >{{value.questionNumber}}</td>
+            <td>{{value.question}}</td>
+            <td>{{value.systemAnswer}}</td>
+            <td>{{value.userAnswer}}</td>
+
+           </tr>
+        </tbody>
+      </table>
+</div>

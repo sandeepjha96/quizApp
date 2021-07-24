@@ -1,0 +1,44 @@
+
+<div class="container">
+    
+
+    <div>
+        <h3> Time : {{time}}</h3>
+    </div>
+    <div>
+        <h1>
+            Q{{currentQuestion}} :  Find {{operandText}} of {{operator1}} and {{operator2}}
+        </h1>
+    </div>
+    <div> 
+        <p>
+            <label for="Enter">Enter your answer</label>
+            <input #value  [(ngModel)]="inputValue" type="text" id="Enter"  name="Enter">
+          </p>
+
+    </div>
+    <div>
+        <p>Your Score {{score1}}/20</p>
+    </div>
+    <div>
+        <div>
+            
+        </div>
+        <p *ngIf="!disableNext">
+            <button type="button"  (click)="nextClicked(inputValue)">Next</button>
+          </p>
+          <p *ngIf="!disableSubmit">
+            <button type="button"  (click)="nextClicked(inputValue)">Submit</button>
+          </p>
+    </div>
+    <div>
+        <p *ngIf="!disableReset">
+            <button type="button"  (click)="reset()">Reset</button>
+          </p>
+    </div>
+</div>
+
+<div *ngIf="quiz1Completed">
+    <app-table [tableValue]="quizDetail"></app-table>
+
+</div>

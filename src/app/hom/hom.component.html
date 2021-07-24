@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="cummulative">
+      <h1>Total Score of both the quiz : {{totalScore}} / {{totalQuestion}}</h1>
+    </div>
+    
+    
+    <div>
+  
+    
+    <div class="row">
+      <div class="col-sm">
+       <h1>First Quiz</h1>
+        <p>
+          <label for="EnterQuestion">How many questions you want in Quiz </label>
+          <input   [(ngModel)]="inputQuestion" type="number" id="EnterQuestion"  name="EnterQuestion">
+        </p>
+        <p>
+          <label for="operand">Enter largest operand value ou want</label>
+          <input   [(ngModel)]="inputOperand" type="text" id="operand"  name="operand">
+        </p>
+        <app-quiz *ngIf="isQuiz1Started"
+        [inputQuestion]="inputQuestion"
+        [inputOperand]="inputOperand"
+        (sc1)="scoreQuiz1($event)"
+        >
+      
+        </app-quiz>
+        <div *ngIf="!isQuiz1Started">
+          <button (click)="quiz1Started()">Start Quiz 1</button>
+        </div>
+      </div>
+   
+  
+      <div class="col-sm">
+        <h1>Second Quiz</h1>
+        <p>
+          <label for="EnterQuestion">How many questions you want in Quiz </label>
+          <input   [(ngModel)]="inputQuestion2" type="number" id="EnterQuestion"  name="EnterQuestion">
+        </p>
+        <p>
+          <label for="operand">Enter largest operand value ou want</label>
+          <input   [(ngModel)]="inputOperand2" type="text" id="operand"  name="operand">
+        </p>
+        <app-quiz2 *ngIf="isQuiz2Started"
+        [inputQuestion]="inputQuestion2"
+        [inputOperand]="inputOperand2"
+        (sc1)="scoreQuiz2($event)"
+        >
+      
+        </app-quiz2>
+        <div *ngIf="!isQuiz2Started">
+          <button (click)="quiz2Started()">Start Quiz 1</button>
+        </div>
+      </div>
+  
+      
+    </div>
+  </div>
+  </div>
